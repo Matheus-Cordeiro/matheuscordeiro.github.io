@@ -16171,7 +16171,7 @@ q=q.length===0?C.wm:C.b.gD(q)
 p=$.ac_()
 if($.be==null)N.a4x()
 o=$.be
-o.Hu(new U.qB("/home","Application",j,q,!1,p,null))
+o.Hu(new U.qB("/home","Matheus Cordeiro - Portfolio",j,q,!1,p,null))
 o.xS()
 return P.a2(null,r)}})
 return P.a3($async$a2B,r)},
@@ -52083,11 +52083,11 @@ o=t.fQ
 p=T.tQ(C.h7,H.b([new T.iQ(C.kQ,i,i,M.eN(i,T.a3w(H.b([new T.Cd(C.B,C.m8,C.m9,C.kZ,i,C.nt,i,H.b([new T.i2(new V.b2(25,0,25,0),N.a3J(L.u2("GitHub",A.dI(i,i,P.aY(204,255,255,255),i,i,i,i,i,i,i,i,20,i,i,i,i,!0,2,i,i,i,i,i),i),C.b2,new U.PL(),C.b2,C.j),i),new T.i2(new V.b2(25,0,25,0),N.a3J(L.u2("LinkedIn",A.dI(i,i,P.aY(204,255,255,255),i,i,i,i,i,i,i,i,20,i,i,i,i,!0,2,i,i,i,i,i),i),C.b2,new U.PM(),C.b2,C.j),i),new T.i2(new V.b2(25,0,25,0),N.a3J(L.u2("About",A.dI(i,i,P.aY(204,255,255,255),i,i,i,i,i,i,i,i,20,i,i,i,i,!0,2,i,i,i,i,i),i),C.b2,new U.PN(),C.b2,C.j),i)],o),i)],o),C.m7),i,i,i,80,i,new V.b2(0,40,0,0),p.a),i)],o),C.ir)
 s=s.gel().ep(0,s.gao(s))
 n=b.Y(t.w).f
-m=K.LW(b,3.5)
-l=K.LW(b,3.5)
+m=K.LW(b,4)
+l=K.LW(b,4)
 k=H.b([C.x0,C.wZ],t.r8)
 j=H.b([new O.eL(6,P.aY(51,156,39,176),new P.x(0,1),10)],t.ec)
-l=M.eN(i,M.eN(i,i,i,i,new S.dR(i,new X.yD(new L.px("images/perfil.jpg"),C.nY),i,i,i,i,C.bj),K.LW(b,3.5),i,i,K.LW(b,3.5)),i,i,new S.dR(i,i,i,i,j,new T.kU(C.kQ,C.nP,C.h2,k,i,i),C.bj),m,i,new V.b2(8,8,8,8),l)
+l=M.eN(i,M.eN(i,i,i,i,new S.dR(i,new X.yD(new L.px("images/perfil.jpg"),C.nY),i,i,i,i,C.bj),K.LW(b,4),i,i,K.LW(b,4)),i,i,new S.dR(i,i,i,i,j,new T.kU(C.kQ,C.nP,C.h2,k,i,i),C.bj),m,i,new V.b2(8,8,8,8),l)
 m=Z.a7y(C.b2,8)
 k=A.dI(i,i,i,i,i,i,i,i,i,i,i,38,i,i,i,i,!0,i,i,i,i,i,i)
 o=T.a3w(H.b([p,M.eN(i,T.a3w(H.b([l,m,new T.i2(new V.b2(0,0,0,0),L.u2("Matheus Cordeiro",Z.abD(i,i,i,i,i,i,i,"DancingScript",i,i,i,i,P.aF([new Z.fO(C.r,C.cm),new F.hJ("40f021e25f9f4e2b67f5072ac941218596581a1621931f44173cbf5245b91fd3",90100),new Z.fO(C.bP,C.cm),new F.hJ("4a2aa446dc86aad49ec46eb66fb313889bded9ef23f286664bba90a2eb156f87",89456)],t.Aw,t.qt),i,i,i,i,i,i,k,i),i),i),L.u2("Mobile / Web Dev",A.dI(i,i,i,i,i,i,i,i,i,i,i,20,i,i,i,i,!0,2,i,i,i,i,i),i),Z.a7y(C.b2,18),L.u2("Mobile lover. Web lover. Front-end lover.\n A beautiful app / website is like a masterpiece.",A.dI(i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,!0,i,i,i,i,i,i),C.eK)],o),C.m8),i,i,i,n.a.b-80,i,i,s.a)],o),C.m7)
