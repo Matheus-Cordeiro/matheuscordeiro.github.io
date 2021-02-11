@@ -33,16 +33,26 @@ class HomeView extends GetView<HomeController> {
                         Align(
                             alignment: Alignment.topLeft,
                             child: Opacity(
-                              opacity: 0.5,
-                              child: Container(
-                                width: 80,
-                                height: 80,
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage('images/logo.png'))),
-                              ),
-                            )),
+                                opacity: 0.5,
+                                child: FlatButton(
+                                  padding: EdgeInsets.all(0),
+                                  onPressed: () => {
+                                    controller.buttonCarouselController
+                                        .previousPage(
+                                            duration:
+                                                Duration(milliseconds: 450),
+                                            curve: Curves.easeOut)
+                                  },
+                                  child: Container(
+                                    width: 80,
+                                    height: 80,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            fit: BoxFit.cover,
+                                            image:
+                                                AssetImage('images/logo.png'))),
+                                  ),
+                                ))),
                         Align(
                           alignment: Alignment.topCenter,
                           child: Container(
@@ -55,6 +65,32 @@ class HomeView extends GetView<HomeController> {
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 25),
+                                          // ignore: deprecated_member_use
+                                          child: HoverButton(
+                                            splashColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            padding: EdgeInsets.all(0),
+                                            textColor:
+                                                Colors.white.withOpacity(0.8),
+                                            hoverTextColor: CustomColors.red,
+                                            onpressed: (() => {
+                                                  controller
+                                                      .buttonCarouselController
+                                                      .previousPage(
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  450),
+                                                          curve: Curves.easeOut)
+                                                }),
+                                            child: Text("Home",
+                                                style: TextStyle(
+                                                  fontSize: 20,
+                                                  letterSpacing: 2,
+                                                )),
+                                          )),
                                       Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 25),
@@ -135,6 +171,7 @@ class HomeView extends GetView<HomeController> {
                     CarouselSlider(
                       carouselController: controller.buttonCarouselController,
                       options: CarouselOptions(
+                        enableInfiniteScroll: false,
                         autoPlay: false,
                         viewportFraction: 1.0,
                         height: MediaQuery.of(context).size.height - 110,
@@ -143,85 +180,82 @@ class HomeView extends GetView<HomeController> {
                         return Builder(
                           builder: (BuildContext context) {
                             if (i == 1) {
-                              return SingleChildScrollView(
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      width: Get.width,
-                                      height:
-                                          MediaQuery.of(context).size.height -
-                                              80,
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Container(
-                                            padding: EdgeInsets.all(8),
+                              return Column(
+                                children: [
+                                  Container(
+                                    width: Get.width,
+                                    height: MediaQuery.of(context).size.height -
+                                        110,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.all(8),
+                                          height: context.heightTransformer(
+                                              dividedBy: 4),
+                                          width: context.heightTransformer(
+                                              dividedBy: 4),
+                                          decoration: BoxDecoration(
+                                            gradient: LinearGradient(
+                                                begin: Alignment.topCenter,
+                                                end: Alignment.bottomCenter,
+                                                colors: [
+                                                  Colors.purple,
+                                                  Colors.redAccent,
+                                                ]),
+                                            shape: BoxShape.circle,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.purple
+                                                    .withOpacity(0.2),
+                                                spreadRadius: 6,
+                                                blurRadius: 10,
+                                                offset: Offset(0, 1),
+                                              ),
+                                            ],
+                                          ),
+                                          child: Container(
                                             height: context.heightTransformer(
                                                 dividedBy: 4),
                                             width: context.heightTransformer(
                                                 dividedBy: 4),
                                             decoration: BoxDecoration(
-                                              gradient: LinearGradient(
-                                                  begin: Alignment.topCenter,
-                                                  end: Alignment.bottomCenter,
-                                                  colors: [
-                                                    Colors.purple,
-                                                    Colors.redAccent,
-                                                  ]),
-                                              shape: BoxShape.circle,
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.purple
-                                                      .withOpacity(0.2),
-                                                  spreadRadius: 6,
-                                                  blurRadius: 10,
-                                                  offset: Offset(0, 1),
-                                                ),
-                                              ],
-                                            ),
-                                            child: Container(
-                                              height: context.heightTransformer(
-                                                  dividedBy: 4),
-                                              width: context.heightTransformer(
-                                                  dividedBy: 4),
-                                              decoration: BoxDecoration(
-                                                  image: DecorationImage(
-                                                      image: AssetImage(
-                                                          'images/perfil.jpg'),
-                                                      fit: BoxFit.cover),
-                                                  shape: BoxShape.circle),
-                                            ),
+                                                image: DecorationImage(
+                                                    image: AssetImage(
+                                                        'images/perfil.jpg'),
+                                                    fit: BoxFit.fill),
+                                                shape: BoxShape.circle),
                                           ),
-                                          Divider(
-                                            height: 8,
-                                            color: Colors.transparent,
-                                          ),
-                                          Padding(
-                                              padding: EdgeInsets.all(0),
-                                              child: Text("Matheus Cordeiro",
-                                                  style:
-                                                      GoogleFonts.dancingScript(
-                                                          textStyle: TextStyle(
-                                                              fontSize: 38)))),
-                                          Text("Mobile / Web Dev",
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  letterSpacing: 2)),
-                                          Divider(
-                                            height: 18,
-                                            color: Colors.transparent,
-                                          ),
-                                          Text(
-                                            "Mobile lover. Web lover. Front-end lover.\n A beautiful app / website is like a masterpiece.",
-                                            style: TextStyle(),
-                                            textAlign: TextAlign.center,
-                                          )
-                                        ],
-                                      ),
+                                        ),
+                                        Divider(
+                                          height: 8,
+                                          color: Colors.transparent,
+                                        ),
+                                        Padding(
+                                            padding: EdgeInsets.all(0),
+                                            child: Text("Matheus Cordeiro",
+                                                style:
+                                                    GoogleFonts.dancingScript(
+                                                        textStyle: TextStyle(
+                                                            fontSize: 38)))),
+                                        Text("Mobile / Web Dev",
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                letterSpacing: 2)),
+                                        Divider(
+                                          height: 18,
+                                          color: Colors.transparent,
+                                        ),
+                                        Text(
+                                          "Mobile lover. Web lover. Front-end lover.\n A beautiful app / website is like a masterpiece.",
+                                          style: TextStyle(),
+                                          textAlign: TextAlign.center,
+                                        )
+                                      ],
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               );
                             } else {
                               return Container(
