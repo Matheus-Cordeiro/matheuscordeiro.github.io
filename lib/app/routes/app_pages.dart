@@ -17,7 +17,7 @@ class AppPages {
         binding: HomeBinding(),
         curve: Curves.easeInOut,
         transition: Transition.topLevel,
-        transitionDuration: Duration(seconds: 5)),
+        transitionDuration: Duration(seconds: 6)),
     GetPage(
         name: _Paths.SPLASH_SCREEN,
         page: () => SplashScreenView(),

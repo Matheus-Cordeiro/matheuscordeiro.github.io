@@ -1,10 +1,10 @@
 import 'dart:ui';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hovering/hovering.dart';
-import 'package:lorem_ipsum/lorem_ipsum.dart';
 import 'package:portifolio/app/components/custom_colors.dart';
 import '../controllers/home_controller.dart';
 // ignore: avoid_web_libraries_in_flutter
@@ -34,6 +34,7 @@ class HomeView extends GetView<HomeController> {
                             alignment: Alignment.topLeft,
                             child: Opacity(
                                 opacity: 0.5,
+                                // ignore: deprecated_member_use"
                                 child: FlatButton(
                                   padding: EdgeInsets.all(0),
                                   onPressed: () => {
@@ -46,11 +47,11 @@ class HomeView extends GetView<HomeController> {
                                   child: Container(
                                     width: 80,
                                     height: 80,
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image:
-                                                AssetImage('images/logo.png'))),
+                                    child: SvgPicture.asset(
+                                      "images/logo.svg",
+                                      semanticsLabel: 'Acme Logo',
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ))),
                         Align(
@@ -263,10 +264,15 @@ class HomeView extends GetView<HomeController> {
                                 height:
                                     MediaQuery.of(context).size.height - 110,
                                 child: Center(
-                                    child: Text(loremIpsum(
-                                  paragraphs: 1,
-                                  initWithLorem: true,
-                                ))),
+                                    child: Text(
+                                  //       loremIpsum(
+                                  //   paragraphs: 1,
+                                  //   initWithLorem: true,
+                                  // )
+                                  "Hi, visitor! 👋\nI'm a Brazilian programmer,\nstudent of analysis and systems development at FATEC Mogi das Cruzes.\nLover of everything that can be considered art, from paintings to beautiful codes.\nMy goal is to do my best to please the user's eyes.\nWant to know more about me? Access my linkedIn or GitHub profile :D",
+                                  style:
+                                      TextStyle(fontSize: 20, letterSpacing: 2),
+                                )),
                               );
                             }
                           },
@@ -283,8 +289,7 @@ class HomeView extends GetView<HomeController> {
                           Padding(
                               padding: EdgeInsets.only(
                                   left: 10, right: 10, bottom: 10),
-                              child: Text(
-                                  "Made with ${controller.parser.get('heart').code} using Flutter"))
+                              child: Text("Made with ❤️ using Flutter"))
                         ],
                       ),
                     )

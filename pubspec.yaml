@@ -21,15 +21,11 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  flutter_svg: ^0.20.0-nullsafety.3
   hovering: 1.0.2
   lorem_ipsum: 0.0.1
   flutter_emoji: 2.2.1+1
   carousel_slider: 3.0.0
-  version_banner: 0.2.1
-  flutter_particle_background: 1.0.7
-  url_launcher: 5.7.10
-  webview_flutter: 1.0.7
-  flutter_web_scrollbar: 0.0.3
   get_storage: 1.4.0
   google_fonts: 1.1.2
   get: 3.24.0

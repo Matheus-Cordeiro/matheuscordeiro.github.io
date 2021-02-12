@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class SplashScreenView extends StatefulWidget {
@@ -10,7 +11,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 5)).then((_) {
+    Future.delayed(Duration(seconds: 1)).then((_) {
       Get.offAllNamed(
         "/home",
       );
@@ -24,9 +25,11 @@ class _SplashScreenViewState extends State<SplashScreenView> {
           child: Container(
         height: context.heightTransformer(dividedBy: 5),
         width: context.heightTransformer(dividedBy: 5),
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                fit: BoxFit.contain, image: AssetImage('images/logo.png'))),
+        child: SvgPicture.asset(
+          "images/logo.svg",
+          semanticsLabel: 'Acme Logo',
+          fit: BoxFit.cover,
+        ),
       )),
     );
   }
